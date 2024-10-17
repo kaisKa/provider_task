@@ -70,21 +70,26 @@ public class EmployeeController {
                 :  new ResponseEntity<>(ApiResponse.builder().status(HttpStatus.NOT_FOUND).message("Employee " + id + " not found").build(),HttpStatus.NOT_FOUND);
     }
 
-    @PostMapping("/search")
+    @GetMapping("/search")
+    @Operation(description = "search API the user JPA specification and criteria api ")
     public ResponseEntity<ApiResponse> searchEmployees
             (@RequestParam(name = "pageNum", defaultValue = "0") int pageNum,
              @RequestParam(name = "pageSize", defaultValue = "10") int pageSize,
-             @RequestBody SearchDto searchDto){
-        EmpSpecificationBuilder builder = new
-                EmpSpecificationBuilder();
-        List<SearchCriteria> criteriaList =
-                searchDto.getSearchCriteriaList();
-        if(criteriaList != null){
-            criteriaList.forEach(x->
-            {x.setDataOption(searchDto
+             @RequestParam String keyword){
+        SearchDto sdto = SearchDto.builder().searchCriteriaList(
+                List.of(
+                        SearchCriteria.builder().filterKey("firstName").operation("cn").value(keyword).build(),
+                        SearchCriteria.builder().filterKey("lastName").operation("cn").value(keyword).build()
+                        )
+        ).dataOption("").build();
+        EmpSpecificationBuilder builder = new EmpSpecificationBuilder();
+        List<SearchCriteria> criteriaList = sdto.getSearchCriteriaList();
+
+        if(!criteriaList.isEmpty()){ criteriaList.forEach(x-> {
+            x.setDataOption(sdto
                     .getDataOption());
                 builder.with(x);
-            });
+        });
         }
 
         Pageable page = PageRequest.of(pageNum, pageSize);

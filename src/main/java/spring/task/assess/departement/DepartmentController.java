@@ -65,18 +65,25 @@ public class DepartmentController {
                 :  new ResponseEntity<>(ApiResponse.builder().status(HttpStatus.NOT_FOUND).message("Department " + id + " not found").build(),HttpStatus.NOT_FOUND);
     }
 
-    @PostMapping("/search")
+    @GetMapping("/search")
     public ResponseEntity<ApiResponse> searchDepartments
             (@RequestParam(name = "pageNum", defaultValue = "0") int pageNum,
              @RequestParam(name = "pageSize", defaultValue = "10") int pageSize,
-             @RequestBody SearchDto searchDto){
+             @RequestParam String keyword){
+
+        SearchDto sdto = SearchDto.builder().searchCriteriaList(
+                List.of(
+                        SearchCriteria.builder().filterKey("name").operation("cn").value(keyword).build(),
+                        SearchCriteria.builder().filterKey("name").operation("cn").value(keyword).build()
+                )
+        ).dataOption("").build();
 
         DepSpecificationBuilder builder = new DepSpecificationBuilder();
-        List<SearchCriteria> criteriaList = searchDto.getSearchCriteriaList();
+        List<SearchCriteria> criteriaList = sdto.getSearchCriteriaList();
 
         if(criteriaList != null){
             criteriaList.forEach(x-> {
-                x.setDataOption(searchDto.getDataOption());
+                x.setDataOption(sdto.getDataOption());
                 builder.with(x);
             });
         }
