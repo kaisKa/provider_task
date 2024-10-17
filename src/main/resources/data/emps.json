@@ -1,0 +1,184 @@
+{
+  "emps": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe",
+      "email": "john.doe@example.com",
+      "title": "Software Engineer",
+      "salary": 70000.00,
+      "dep_id": 1
+    },
+    {
+      "id": 2,
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "email": "jane.smith@example.com",
+      "title": "Project Manager",
+      "salary": 80000.00,
+      "dep_id": 2
+    },
+    {
+      "id": 3,
+      "firstName": "Emily",
+      "lastName": "Johnson",
+      "email": "emily.johnson@example.com",
+      "title": "HR Specialist",
+      "salary": 60000.00,
+      "dep_id": 3
+    },
+    {
+      "id": 4,
+      "firstName": "Michael",
+      "lastName": "Brown",
+      "email": "michael.brown@example.com",
+      "title": "Business Analyst",
+      "salary": 75000.00,
+      "dep_id": 4
+    },
+    {
+      "id": 5,
+      "firstName": "Jessica",
+      "lastName": "Williams",
+      "email": "jessica.williams@example.com",
+      "title": "Marketing Specialist",
+      "salary": 65000.00,
+      "dep_id": 5
+    },
+    {
+      "id": 6,
+      "firstName": "David",
+      "lastName": "Jones",
+      "email": "david.jones@example.com",
+      "title": "DevOps Engineer",
+      "salary": 90000.00,
+      "dep_id": 6
+    },
+    {
+      "id": 7,
+      "firstName": "Sophia",
+      "lastName": "Martinez",
+      "email": "sophia.martinez@example.com",
+      "title": "UX Designer",
+      "salary": 72000.00,
+      "dep_id": 7
+    },
+    {
+      "id": 8,
+      "firstName": "Chris",
+      "lastName": "Anderson",
+      "email": "chris.anderson@example.com",
+      "title": "Quality Assurance Engineer",
+      "salary": 68000.00,
+      "dep_id": 8
+    },
+    {
+      "id": 9,
+      "firstName": "Linda",
+      "lastName": "Thomas",
+      "email": "linda.thomas@example.com",
+      "title": "Product Manager",
+      "salary": 88000.00,
+      "dep_id": 9
+    },
+    {
+      "id": 10,
+      "firstName": "Robert",
+      "lastName": "Taylor",
+      "email": "robert.taylor@example.com",
+      "title": "Solutions Architect",
+      "salary": 95000.00,
+      "dep_id": 10
+    },
+    {
+      "id": 11,
+      "firstName": "Lisa",
+      "lastName": "Harris",
+      "email": "lisa.harris@example.com",
+      "title": "Content Writer",
+      "salary": 54000.00,
+      "dep_id": 11
+    },
+    {
+      "id": 12,
+      "firstName": "James",
+      "lastName": "Clark",
+      "email": "james.clark@example.com",
+      "title": "Data Scientist",
+      "salary": 98000.00,
+      "dep_id": 12
+    },
+    {
+      "id": 13,
+      "firstName": "Elena",
+      "lastName": "Moore",
+      "email": "elena.moore@example.com",
+      "title": "Customer Support Lead",
+      "salary": 58000.00,
+      "dep_id": 13
+    },
+    {
+      "id": 14,
+      "firstName": "Carlos",
+      "lastName": "Jackson",
+      "email": "carlos.jackson@example.com",
+      "title": "Security Analyst",
+      "salary": 88000.00,
+      "dep_id": 14
+    },
+    {
+      "id": 15,
+      "firstName": "Mia",
+      "lastName": "White",
+      "email": "mia.white@example.com",
+      "title": "Legal Advisor",
+      "salary": 82000.00,
+      "dep_id": 15
+    },
+    {
+      "id": 16,
+      "firstName": "Oliver",
+      "lastName": "Green",
+      "email": "oliver.green@example.com",
+      "title": "Database Administrator",
+      "salary": 74000.00,
+      "dep_id": 16
+    },
+    {
+      "id": 17,
+      "firstName": "Emma",
+      "lastName": "Walker",
+      "email": "emma.walker@example.com",
+      "title": "Finance Analyst",
+      "salary": 78000.00,
+      "dep_id": 17
+    },
+    {
+      "id": 18,
+      "firstName": "Benjamin",
+      "lastName": "Young",
+      "email": "benjamin.young@example.com",
+      "title": "Tech Lead",
+      "salary": 102000.00,
+      "dep_id": 18
+    },
+    {
+      "id": 19,
+      "firstName": "Ava",
+      "lastName": "Hall",
+      "email": "ava.hall@example.com",
+      "title": "Operations Manager",
+      "salary": 87000.00,
+      "dep_id": 19
+    },
+    {
+      "id": 20,
+      "firstName": "Liam",
+      "lastName": "Allen",
+      "email": "liam.allen@example.com",
+      "title": "System Administrator",
+      "salary": 76000.00,
+      "dep_id": 20
+    }
+  ]
+}
