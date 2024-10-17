@@ -24,22 +24,18 @@ public class EmployeeSpecification implements Specification<Employee> {
         String strToSearch = searchCriteria.getValue()
                 .toString().toLowerCase();
 
-        switch(Objects.requireNonNull(
-                SearchOperation.getSimpleOperation
-                        (searchCriteria.getOperation()))){
+        switch(Objects.requireNonNull(SearchOperation.getSimpleOperation(searchCriteria.getOperation()))){
             case CONTAINS:
-                if(searchCriteria.getFilterKey().equals("deptName"))
+                if(searchCriteria.getFilterKey().equals("name"))
                 {
-                    return cb.like(cb.lower(departmentJoin(root).
-                                    <String>get(searchCriteria.getFilterKey())),
+                    return cb.like(cb.lower(departmentJoin(root).<String>get(searchCriteria.getFilterKey())),
                             "%" + strToSearch + "%");
                 }
-                return cb.like(cb.lower(root
-                                .get(searchCriteria.getFilterKey())),
+                return cb.like(cb.lower(root.get(searchCriteria.getFilterKey())),
                         "%" + strToSearch + "%");
 
             case DOES_NOT_CONTAIN:
-                if(searchCriteria.getFilterKey().equals("deptName"))
+                if(searchCriteria.getFilterKey().equals("name"))
                 {
                     return cb.notLike(cb.lower(departmentJoin(root).
                                     <String>get(searchCriteria.getFilterKey())),
@@ -52,8 +48,7 @@ public class EmployeeSpecification implements Specification<Employee> {
         }
         return null;
     }
-    private Join<Employee, Department> departmentJoin(Root<Employee>
-                                                             root){
+    private Join<Employee, Department> departmentJoin(Root<Employee> root){
         return root.join("department");
     }
 

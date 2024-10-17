@@ -19,8 +19,7 @@ public class DepartmentSpecification implements Specification<Department> {
     }
 
     @Override
-    public Predicate toPredicate(Root<Department> root,
-                                 CriteriaQuery<?> query, CriteriaBuilder cb) {
+    public Predicate toPredicate(Root<Department> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
         String strToSearch = searchCriteria.getValue()
                 .toString().toLowerCase();
 
@@ -29,12 +28,10 @@ public class DepartmentSpecification implements Specification<Department> {
                         (searchCriteria.getOperation()))){
             case CONTAINS:
 
-                return cb.like(cb.lower(root
-                                .get(searchCriteria.getFilterKey())),
+                return cb.like(cb.lower(root.get(searchCriteria.getFilterKey())),
                         "%" + strToSearch + "%");
             case DOES_NOT_CONTAIN:
-                               return cb.notLike(cb.lower(root
-                                .get(searchCriteria.getFilterKey())),
+                               return cb.notLike(cb.lower(root.get(searchCriteria.getFilterKey())),
                         "%" + strToSearch + "%");
 
         }

@@ -73,7 +73,6 @@ public class DepartmentController {
 
         SearchDto sdto = SearchDto.builder().searchCriteriaList(
                 List.of(
-                        SearchCriteria.builder().filterKey("name").operation("cn").value(keyword).build(),
                         SearchCriteria.builder().filterKey("name").operation("cn").value(keyword).build()
                 )
         ).dataOption("").build();

@@ -53,7 +53,8 @@ public class EmployeeService {
         employee.setLastName(emp.getLastName());
         employee.setEmail(emp.getEmail());
         employee.setTitle(emp.getTitle());
-
+        Department dep = this.departmentRepository.getById(emp.getDep_id());
+        employee.setDepartment(dep);
         Employee u = this.repository.save(employee);
         return objectMapper.convertValue(u,EmployeeDto.class);
     }

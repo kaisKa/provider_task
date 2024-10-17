@@ -18,7 +18,6 @@ public class EmployeeDto {
     @JsonIgnore
     private Long id;
     @NotBlank
-//    @Size(min = 6,  message = "Password length should be between 6 to 30 char ")
     @NotNull(message = "Invalid FistName : FirstName is NULL")
     private String firstName;
     @NotNull(message = "Invalid lastName: lastName is NULL")

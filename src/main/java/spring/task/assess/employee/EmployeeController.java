@@ -71,15 +71,16 @@ public class EmployeeController {
     }
 
     @GetMapping("/search")
-    @Operation(description = "search API the user JPA specification and criteria api ")
+    @Operation(description = "search API that use JPA specification and criteria api 'configures for the firstName and department name' ")
     public ResponseEntity<ApiResponse> searchEmployees
             (@RequestParam(name = "pageNum", defaultValue = "0") int pageNum,
              @RequestParam(name = "pageSize", defaultValue = "10") int pageSize,
              @RequestParam String keyword){
         SearchDto sdto = SearchDto.builder().searchCriteriaList(
                 List.of(
-                        SearchCriteria.builder().filterKey("firstName").operation("cn").value(keyword).build(),
-                        SearchCriteria.builder().filterKey("lastName").operation("cn").value(keyword).build()
+                        SearchCriteria.builder().filterKey("name").operation("cn").value(keyword).build(),
+                        SearchCriteria.builder().filterKey("firstName").operation("cn").value(keyword).build()
+//                        SearchCriteria.builder().filterKey("lastName").operation("cn").value(keyword).build()
                         )
         ).dataOption("").build();
         EmpSpecificationBuilder builder = new EmpSpecificationBuilder();
