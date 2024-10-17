@@ -53,9 +53,9 @@ http://localhost:8080/h2-console
 API Documentation
 
 Swagger UI is available for API documentation at:
-```bash
-http://localhost:8080/swagger-ui.html
-```
+
+[http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+
 ## Technologies Used
 
 - **Spring Boot** for building the application
@@ -65,3 +65,4 @@ http://localhost:8080/swagger-ui.html
 - **Java Specification** and **Criteria API** for dynamic search functionality
 - **ObjectMapper** for DTO mapping
 - **RestControllerAdvice** for centralized exception handling
+
