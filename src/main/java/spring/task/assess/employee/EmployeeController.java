@@ -66,8 +66,8 @@ public class EmployeeController {
     @DeleteMapping("/{id}")
     @Operation(description = "Endpoint to delete a Employee from the db")
     public ResponseEntity<ApiResponse> deleteById(@PathVariable("id") Long id) {
-        return this.service.delete(id) ? new ResponseEntity<>(ApiResponse.builder().status(HttpStatus.OK).message("Department deleted - Department ID:" + id).build(),HttpStatus.OK)
-                :  new ResponseEntity<>(ApiResponse.builder().status(HttpStatus.NOT_FOUND).message("Department " + id + " not found").build(),HttpStatus.NOT_FOUND);
+        return this.service.delete(id) ? new ResponseEntity<>(ApiResponse.builder().status(HttpStatus.OK).message("Employee deleted - Employee ID:" + id).build(),HttpStatus.OK)
+                :  new ResponseEntity<>(ApiResponse.builder().status(HttpStatus.NOT_FOUND).message("Employee " + id + " not found").build(),HttpStatus.NOT_FOUND);
     }
 
     @PostMapping("/search")

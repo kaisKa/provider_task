@@ -22,19 +22,7 @@ public class HTTPCodeExceptionHandler {
     }
 
 
-//    @ExceptionHandler(UnauthorisedException.class)
-//    public ResponseEntity<GeneralResponse<Object>> handleUnAuthorizedAccess(Exception e) {
-//        e.printStackTrace();
-//        HttpStatus status = HttpStatus.UNAUTHORIZED;
-//        return ResponseEntity.status(status).body(new GeneralResponse<>(true, e.getMessage(), Map.of()));
-//    }
 
-//    @ExceptionHandler(ForbiddenException.class)
-//    public ResponseEntity<GeneralResponse<Object>> handleForbidden(Exception e) {
-//        e.printStackTrace();
-//        HttpStatus status = HttpStatus.FORBIDDEN;
-//        return ResponseEntity.status(status).body(new GeneralResponse<>(true, e.getMessage(), Map.of()));
-//    }
 
 
 

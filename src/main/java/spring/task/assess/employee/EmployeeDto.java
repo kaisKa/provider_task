@@ -3,7 +3,9 @@ package spring.task.assess.employee;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Objects;
 
@@ -17,8 +19,12 @@ public class EmployeeDto {
     private Long id;
     @NotBlank
 //    @Size(min = 6,  message = "Password length should be between 6 to 30 char ")
+    @NotNull(message = "Invalid FistName : FirstName is NULL")
     private String firstName;
+    @NotNull(message = "Invalid lastName: lastName is NULL")
     private String lastName;
+    @NotNull(message = "Invalid email: email NULL")
+    @Email(regexp = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}")
     private String email;
     private String title;
     private double salary;

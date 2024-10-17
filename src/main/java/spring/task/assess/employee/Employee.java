@@ -1,5 +1,6 @@
 package spring.task.assess.employee;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -7,7 +8,9 @@ import lombok.Setter;
 import spring.task.assess.departement.Department;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Objects;
 
@@ -26,17 +29,22 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
     private String firstName;
     private String lastName;
     private String email;
     private String title;
     private double salary;
 
+    @JsonIgnore
     @Version
     private Integer version;
 
     @ManyToOne
     @JoinColumn(name = "DEPT_ID")
     private Department department;
+
+
+
 }
 
