@@ -43,9 +43,18 @@ public class EmployeeService {
     }
 
 
-    public EmployeeDto update(EmployeeDto emp) {
-        Employee updateEmployee = objectMapper.convertValue(emp,Employee.class);
-        Employee u = this.repository.save(updateEmployee);
+    public EmployeeDto update(EmployeeDto emp, Long id) {
+        var opEmp = this.repository.findById(id);
+        if(opEmp.isEmpty())
+            throw new EmpNotFoundException("Employee " + id + " not fount " );
+        // this could be done in a better way, like this null values could be set but for the sake of simplicity
+        Employee employee = opEmp.get();
+        employee.setFirstName(emp.getFirstName());
+        employee.setLastName(emp.getLastName());
+        employee.setEmail(emp.getEmail());
+        employee.setTitle(emp.getTitle());
+
+        Employee u = this.repository.save(employee);
         return objectMapper.convertValue(u,EmployeeDto.class);
     }
 

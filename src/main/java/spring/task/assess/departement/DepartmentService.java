@@ -44,8 +44,12 @@ public class DepartmentService  {
     }
 
 
-    public DepartmentDTO update(DepartmentDTO dep) {
-        Department department = objectMapper.convertValue(dep,Department.class);
+    public DepartmentDTO update(DepartmentDTO dep, Long id) {
+        var opDep = this.repository.findById(id);
+        if(opDep.isEmpty())
+            throw new RuntimeException("Department "+ id+ " does not exist");
+        Department department = opDep.get();
+        department.setName(dep.getName()); //this could be handled ina better way cause like this null value will be set
         Department u = this.repository.save(department);
         return objectMapper.convertValue(u,DepartmentDTO.class);
     }

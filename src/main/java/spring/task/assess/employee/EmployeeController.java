@@ -59,8 +59,8 @@ public class EmployeeController {
 
     @PutMapping()
     @Operation(description = "Endpoint to update existing Employee and create one in case does not exist")
-    public ResponseEntity<EmployeeDto> update(@RequestBody EmployeeDto emp) {
-        return ResponseEntity.ok().body(this.service.update(emp));
+    public ResponseEntity<EmployeeDto> update(@RequestBody EmployeeDto emp, @RequestParam Long id) {
+        return ResponseEntity.ok().body(this.service.update(emp, id));
     }
 
     @DeleteMapping("/{id}")

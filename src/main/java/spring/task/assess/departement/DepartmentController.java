@@ -54,8 +54,8 @@ public class DepartmentController {
 
     @PutMapping()
     @Operation(description = "Endpoint to update existing department and create one in case does not exist")
-    public ResponseEntity<DepartmentDTO> update(@RequestBody DepartmentDTO dep) {
-        return ResponseEntity.ok().body(this.service.update(dep));
+    public ResponseEntity<DepartmentDTO> update(@RequestBody DepartmentDTO dep ,@RequestParam Long id) {
+        return ResponseEntity.ok().body(this.service.update(dep, id));
     }
 
     @DeleteMapping("/{id}")
