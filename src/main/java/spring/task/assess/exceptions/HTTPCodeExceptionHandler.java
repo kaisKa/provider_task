@@ -12,19 +12,10 @@ import java.util.stream.Collectors;
 @RestControllerAdvice
 public class HTTPCodeExceptionHandler {
 
-
-
-
-
     @ExceptionHandler(EmpNotFoundException.class)
     public ResponseEntity<Object> userNotFoundHandler(Exception e) {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage() );
     }
-
-
-
-
-
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
 //    @ResponseStatus(HttpStatus.BAD_REQUEST)
@@ -41,48 +32,11 @@ public class HTTPCodeExceptionHandler {
     }
 
 
-
-
-//    @ExceptionHandler(BadRequestException.class)
-////    @ResponseStatus(HttpStatus.BAD_REQUEST)
-//    public ResponseEntity<GeneralResponse<Map<Object, Object>>> BadRequestExceptionHandler(BadRequestException e) {
-//        e.printStackTrace();
-//        HttpStatus status = HttpStatus.BAD_REQUEST;
-//        return ResponseEntity.status(status).body(new GeneralResponse<>(true, e.getMessage(), Map.of()));
-//    }
-
-
-
-//    @ExceptionHandler(NotValidLicenseException.class)
-//    public ResponseEntity<GeneralResponse<Object>> notValidLicenseExceptionHandler(Exception e) {
-//        return ResponseEntity.ok(new GeneralResponse<>(true, e.getMessage(), Map.of()));
-//    }
-
-
-//    @ExceptionHandler(UserAlreadyExistedException.class)
-//    @ResponseStatus(HttpStatus.CONFLICT)
-//    public ResponseEntity<GeneralResponse<Object>> handleNoUserExist(Exception e) {
-//        e.printStackTrace();
-//        return ResponseEntity.status(HttpStatus.CONFLICT).body(new GeneralResponse<>(true, e.getMessage(), Map.of()));
-//    }
-//    @ExceptionHandler(ChangeSetPersister.NotFoundException.class) //NotFoundException
-//    @ResponseStatus(HttpStatus.NOT_FOUND)
-//    public ResponseEntity<Object> NotFoundExceptionsHandler(
-//            Exception e
-//    ) {
-//        HttpStatus status = HttpStatus.NOT_FOUND; // 404
-//        // converting the stack trace to String
-//        StringWriter stringWriter = new StringWriter();
-//        PrintWriter printWriter = new PrintWriter(stringWriter);
-//        e.printStackTrace(printWriter);
-//        String stackTrace = stringWriter.toString();
-//
-//        var response = new GeneralResponse<>(true, e.getLocalizedMessage(), (Object) Map.of());
-////        response.setStackTrace(stackTrace);
-//        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
-//    }
-
-    //fallback handler method
+    /**
+     * fallback handler method
+     * @param e
+     * @return
+     */
     @ExceptionHandler(Exception.class) // exception handled
     public ResponseEntity<Object> handleExceptions(
             Exception e
